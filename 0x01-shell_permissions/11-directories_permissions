@@ -1,2 +1,2 @@
 #!/bin/bash
-sudd chmod -R +111*/
+chmod ugo+x./*

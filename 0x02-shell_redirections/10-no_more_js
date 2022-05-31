@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -iname \*.zip -delete
+find . -type f -iname \*.js -delete

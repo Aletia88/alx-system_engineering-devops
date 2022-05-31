@@ -1,0 +1,3 @@
+#!/bin/bash
+grep -Rw '/etc/passwd' -e 'root'
+y

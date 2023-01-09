@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+#who really am I
+
+whoami $1

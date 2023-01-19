@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# run apache on designated container
+# find out what’s keeping your Ubuntu container’s Nginx installation from listening on port 80
 
-echo "ServerName localhost" >> /etc/apache2.conf
-service apache2 start
+apt-get update
+apt-get -y install nginx
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+service nginx start

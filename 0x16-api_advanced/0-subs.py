@@ -1,19 +1,18 @@
-#/usr/bin/python3
-""" module for function to return number of subreddit subscribers """
+#!/usr/bin/python3
+""" Program that use Reddit API and query How many subs are there?"""
 import requests
-import sys
 
 
 def number_of_subscribers(subreddit):
-    """  Args:
-    subreddit: subreddit name
-    Returns:
-    number of subscribers to the subreddit,
-    or 0 if subreddit requested is invalid"""
-    headers = {'User-Agent': 'xica369'}
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    """ function that queries the Reddit API and returns the number
+    of subscribers """
+    # me.json is a modhash token to prevent CSRF
+    url_subs = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    h = {'User-Agent': 'My User Agent'}
+    req = requests.get(url_subs, headers=h, allow_redirects=False)
 
-    if response.status_code == 200:
-        return (response.json().get("data").get("subscribers"))
+    if (req.status_code == 200):
+        req_json = req.json()
+        count_subs = req_json['data']['subscribers']
+        return (count_subs)
     return (0)

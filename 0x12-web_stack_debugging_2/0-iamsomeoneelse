@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-#who really am I
-
-sudo -u "$1" whoami

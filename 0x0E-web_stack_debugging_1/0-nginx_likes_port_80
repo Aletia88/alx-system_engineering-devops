@@ -1,5 +1,3 @@
-
-#
 #/usr/bin/env bash                                                                                                                                       
 # fix nginx listening on port 80                                                                                                                          
 # Go to sites-enabled folder for Nginx                                                                                                                    
